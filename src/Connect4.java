@@ -28,7 +28,7 @@ public class Connect4 {
 	private static final int MAX_COLUMNS=12;
 	
 	
-	public static final char[] SYMBOLS = {'+','-','@','#','$','‚Ç¨','%','&','!','?','=','^','~'};
+	public static final char[] SYMBOLS = {'+','-','@','#','$','‚','¨','%','&','!','?','=','^','~'};
 	public static int currentPlayer=0; // Jogador Actual
 	public static int firstPlayer=-1;
 	public static final String COMMANDS="PNUFTH";
@@ -108,16 +108,16 @@ public class Connect4 {
 		String x;
 		int a;
 		
-		//Repetir at√© que a jogada seja v√°lida
+		//Repetir atÈ que a jogada seja v·lida
 		do {
 			a=-1;
 			//Imprimir tabuleiro e pedir coluna para fazer a jogada do jogador actual
 			System.out.println(Game+"\n"+players[currentPlayer].getName()+"["+players[currentPlayer].getSymbol()+"]"+", Coluna: ");
 
-			//Receber String n√£o vazia
+			//Receber String n„o vazia
 			do {x=in.nextLine().toUpperCase();} while (x.isEmpty()); 
 			
-			//Verificar se √© um comando, se for executa e volta ao inicio do ciclo
+			//Verificar se È um comando, se for executa e volta ao inicio do ciclo
 			if (COMMANDS.contains(x)) {
 				switch (x.charAt(0)) {
 				case 'P': {
@@ -165,7 +165,7 @@ public class Connect4 {
 		return a;
 	}
 	
-	// M√©todo que verifica se h√° vencedor ap√≥s a √∫ltima jogada
+	// MÈtodo que verifica se h√° vencedor apÛs a ˙ltima jogada
 	private static void CheckWin() {
 		//Verificar se o jogo terminou com a ultima jogada
 		if (Game.CheckInLine()) {
@@ -179,7 +179,7 @@ public class Connect4 {
 			//Declarar vencedor
 			System.out.println(Game+"\nO jogo terminou, o jogador "+players[currentPlayer].getName()+" venceu!\n");
 			
-			//Mostrar pontua√ß√µes
+			//Mostrar pontuaÁıes
 			showPont();
 			//Terminar jogo
 			terminateGame=true;
@@ -187,7 +187,7 @@ public class Connect4 {
 	}
 	
 	// M√©todo que, no caso de empate, incrementa os empates nos GameInfo's de cada jogador
-	// e mostra a pontua√ß√£o
+	// e mostra a pontuaÁ„o
 	private static void Draw() {
 		players[0].GameInfo().incrementDraws();
 		players[1].GameInfo().incrementDraws();
@@ -218,7 +218,7 @@ public class Connect4 {
 				
 				//Empate
 				else if (Game.checkDraw() ) Draw();
-				//Passar ao pr√≥ximo jogador
+				//Passar ao prÛximo jogador
 				if (!terminateGame && !exitGame) nextToPlay();
 				} while (!newGame && !exitGame && !terminateGame);
 			
@@ -302,10 +302,10 @@ public class Connect4 {
 			dificulty=level;			
 		}
 		
-		// M√©todo para mostrar a pontua√ß√£o
+		// MÈtodo para mostrar a pontuaÁ„o
 		public static void showPont() {
 			
-			System.out.println("\n\nPontua√ß√£o actual:\n");
+			System.out.println("\n\nPontuaÁ„o actual:\n");
 			System.out.println("Nome\t\tV,E,D");
 			for (int i=0;i<players.length;i++)
 			System.out.println(
@@ -318,7 +318,7 @@ public class Connect4 {
 		// M√©todo para mostrar a ajuda
 		public static void showHelp() {
 				System.out.println("Comandos:\n");
-				System.out.println("\tP - Mostra quantidade de jogos e pontua√ß√µes dos jogadores");
+				System.out.println("\tP - Mostra quantidade de jogos e pontuaÁıes dos jogadores");
 				System.out.println("\tN - Novo jogo (considera-se uma derrota para o jogador actual");
 				System.out.println("\tU - Permite desfazer a ultima jogada");
 				System.out.println("\tF - Termina o jogo e vai para o menu principal");
@@ -330,7 +330,7 @@ public class Connect4 {
 			
 			boolean fromCommandline=false;
 			
-			// Manter jogo a correr at√© que seja escolhida a op√ß√£o 0
+			// Manter jogo a correr atÈ que seja escolhida a opÁ„o 0
 			while(true) {
 				try {
 				switch ((args.length==0)?menu():commandLineMode(args)) {
@@ -371,7 +371,7 @@ public class Connect4 {
 			System.out.println("Sintaxe:\n");
 			System.out.println("\tConnect4 auto [<level:1,2,3>]\n");
 			System.out.println("\tExemplos:");
-			System.out.println("\tConnect4 auto (n√≠vel predefinido=2)");
+			System.out.println("\tConnect4 auto (nÌvel predefinido=2)");
 			System.out.println("\tConnect4 auto 2\n");
 			return 0;
 		}
