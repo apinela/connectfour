@@ -2,36 +2,33 @@ import java.io.*;
 
 public class Top {
 	
-	// Número máximo de pontuações existente no top
 	private static final int MAX_TOP_SCORES=10;
 	
-	// Definição dos campos que aparecem no top
 	private static final int NAME=0;
 	private static final int VICTORIES=1;
 	private static final int DRAWS=2;
 	private static final int LOSSES=3;
 	private static final int FIELDS=4; // Numero de campos no total
 	
-	// Outros parâmetros
 	private static final char FIELD_SEPARATOR=';';	// Separador de campos
-	private int nTop=0;								// Número de pontuações existentes
-	private File TopFile;							// Nome do ficheiro de pontuações
+	private int nTop=0;								// Numero de pontua��es existentes
+	private File TopFile;							// Nome do ficheiro de pontua��es
 	
 	private String[][] Top = new String[MAX_TOP_SCORES][FIELDS];
 	
-	// Método constructor do top de pontuações
+	// M�todo constructor
 	public Top(String fileName) {
 		TopFile = new File(fileName);
 		if (!topFileExists()) CreateNew();
 		Top=getTop();
 	}
 	
-	// Método que verifica se o ficheiro do top já existe
+	// M�todo que verifica se o ficheiro do top já existe
 	private boolean topFileExists() {
 		return TopFile.exists();
 	}
 	
-	// Método para criar um novo ficheiro vazio de top
+	// M�todo para criar um novo ficheiro vazio de top
 	private boolean CreateNew() {
 		try {
 			TopFile.createNewFile();
@@ -39,7 +36,7 @@ public class Top {
 		return true;
 	}
 	
-	// Método para apagar o ficheiro de top
+	// M�todo para apagar o ficheiro de top
 	public boolean deleteTop() {
 		try {
 			TopFile.delete();
@@ -47,7 +44,7 @@ public class Top {
 		return true;
 	}
 	
-	// Método que adiciona ao top uma nova pontuação caso esta seja maior que a última 
+	// M�todo que adiciona ao top uma nova pontuação caso esta seja maior que a última 
 	public boolean addTop(Player player, boolean test) {
 		int p=-1;
 		

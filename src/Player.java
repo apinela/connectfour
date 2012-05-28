@@ -6,7 +6,7 @@ public class Player {
 	private GameInfo GameInfo;	// Informa√ß√£o do jogo associada ao jogador (Vitorias, empates e derrotas)
 	private boolean Human;		// Vari√°vel boleana que define se o jogador √© humano ou computador (AI)
 	
-	// M√©todo constructor da classe Player
+	// MÈtodo constructor da classe Player
 	public Player(String name, char symbol, boolean isHuman) {
 		this.Name = name;
 		this.Symbol = symbol;
@@ -14,27 +14,27 @@ public class Player {
 		this.GameInfo = new GameInfo();
 	}
 	
-	// M√©todo para obter o nome do jogador
+	// MÈtodo para obter o nome do jogador
 	public String getName() {
 		return this.Name;
 	}
 	
-	// M√©todo para redefinir o nome do jogador
+	// MÈtodo para redefinir o nome do jogador
 	public void setName(String name) {
 		this.Name=name;
 	}
 	
-	// M√©todo para obter o symbolo do jogador
+	// MÈtodo para obter o symbolo do jogador
 	public char getSymbol() {
 		return this.Symbol;
 	}
 	
-	// M√©todo para obter o objecto GameInfo associado ao jogador
+	// MÈtodo para obter o objecto GameInfo associado ao jogador
 	public GameInfo GameInfo() {
 		return this.GameInfo;
 	}
 	
-	// M√©todo para obter o tipo de jogador, humano ou computador
+	// MÈtodo para obter o tipo de jogador, humano ou computador
 	public boolean isHuman() {
 		return this.Human;
 	}
